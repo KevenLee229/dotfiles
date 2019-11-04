@@ -39,7 +39,7 @@
 
 !! URxvt Appearance
 URxvt.depth: 32
-URxvt.background: [95]#141c21
+URxvt.background: [90]#141c21
 URxvt.font: xft:Source Code Pro for Powerline:autohint=true:size=10
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
@@ -52,7 +52,7 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.iso14755: false
-URxvt.iconFile: ~/.urxvt/terminal.jpg
+!URxvt.iconFile: /home/keven/.urxvt/terminal.png
 
 
 !! Copy Paste & Other Extensions
