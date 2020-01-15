@@ -10,4 +10,6 @@ ln -sfn $(pwd)/sshrc/.sshrc ~
 ln -sfn $(pwd)/sshrc/.sshrc.d ~
 sudo cp sshrc/sshrc /usr/local/bin
 
+mkdir -p ~/.config
+ln -sfn $(pwd)/.config/* ~/.config
 
