@@ -16,22 +16,22 @@ syntax on
 
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'zxqfl/tabnine-vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'mattn/emmet-vim'
-
- 
-call vundle#end()
+"Plugin 'zxqfl/tabnine-vim'
+"Plugin 'bling/vim-airline'
+"Plugin 'tpope/vim-surround'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'tmhedberg/SimpylFold'
+"Plugin 'mattn/emmet-vim'
+"
+" 
+"call vundle#end()
 filetype plugin indent on
 
 
@@ -79,3 +79,4 @@ nmap <C-_> <Leader>c<Space>
 " ctrl+N open/close NerdTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+:imap <special> jk <Esc>
