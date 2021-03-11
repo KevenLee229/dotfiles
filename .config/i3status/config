@@ -12,7 +12,7 @@ order += "load"
 order += "cpu_temperature 0"
 order += "disk /"
 order += "disk /home"
-order += "wireless wlp3s0"
+order += "wireless wlp5s0"
 order += "volume master"
 order += "battery 1"
 order += "tztime local"
@@ -32,7 +32,7 @@ disk "/" {
 }
 
 
-wireless wlp3s0 {
+wireless wlp5s0 {
         format_up = "<span background='#b48ead'> ID %ip </span>"
         format_down = "<span background='#b48ead'> Disconnected </span>"
 }

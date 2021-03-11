@@ -59,6 +59,8 @@ values."
      imenu-list
      java
      org
+     (ess :variables
+          ess-enable-smart-equals t)
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-open-command "typora")
@@ -75,7 +77,6 @@ values."
      syntax-checking
      ;; version-control
      chrome
-     chinese
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -330,6 +331,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+   ;; (setq configuration-layer-elpa-archives
+   ;;    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+   ;;     ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+   ;;     ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+  (add-to-list 'load-path "~/.local/share/icons-in-terminal/")
   )
 
 (defun dotspacemacs/user-config ()
@@ -417,7 +423,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (vimrc-mode helm-gtags ggtags dactyl-mode ivy pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib powerline pdf-tools tablist spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s helm avy helm-core async popup gmail-message-mode ham-mode html-to-markdown flymd edit-server csv-mode imenu-list ein polymode deferred websocket auctex-latexmk yasnippet-snippets company-auctex auctex web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data vmd-mode py-autopep8 unfill mwim web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company-emacs-eclim company-anaconda company auto-yasnippet ac-ispell auto-complete eclim yasnippet xterm-color shell-pop org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download multi-term mmm-mode markdown-toc markdown-mode htmlize gnuplot gh-md eshell-z eshell-prompt-extras esh-help yapfify smeargle pyvenv pytest pyenv-mode py-isort pip-requirements orgit magit-gitflow magit-popup live-py-mode hy-mode dash-functional helm-pydoc helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit transient git-commit with-editor cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (ess-R-data-view ess julia-mode pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib powerline pdf-tools tablist spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s helm avy helm-core async popup gmail-message-mode ham-mode html-to-markdown flymd edit-server csv-mode imenu-list ein polymode deferred websocket auctex-latexmk yasnippet-snippets company-auctex auctex web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data vmd-mode py-autopep8 unfill mwim web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company-emacs-eclim company-anaconda company auto-yasnippet ac-ispell auto-complete eclim yasnippet xterm-color shell-pop org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download multi-term mmm-mode markdown-toc markdown-mode htmlize gnuplot gh-md eshell-z eshell-prompt-extras esh-help yapfify smeargle pyvenv pytest pyenv-mode py-isort pip-requirements orgit magit-gitflow magit-popup live-py-mode hy-mode dash-functional helm-pydoc helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit transient git-commit with-editor cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(safe-local-variable-values
    (quote
     ((python-backend . anaconda)

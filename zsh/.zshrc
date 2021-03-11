@@ -8,7 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="steeef"
+# ZSH_THEME="steeef"
+ZSH_THEME="agnoster"
 # ZSH_THEME="powerline"
 
 # Set list of themes to pick from when loading at random
@@ -69,7 +70,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search z)
+plugins=(git history-substring-search z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 bindkey -M emacs '^P' history-substring-search-up
@@ -100,9 +101,9 @@ bindkey -M emacs '^N' history-substring-search-down
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/keven/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/keven/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/keven/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
+# source /home/keven/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/keven/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /home/keven/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 autoload -U compinit && compinit
 
 # custom config
@@ -119,17 +120,15 @@ export sengled=/mnt/d/User/Desktop/Course/CV/work/sengled
 export EDITOR="emacsclient -t"
 
 # custom command
-screenfetch
+neofetch
 
 #alias ssh_hound='ssh -NfL 6666:10.20.11.34:3306 ubuntu@jumpbox'
 alias ssh_hound='ssh -NfL 6666:10.20.18.197:3306 ubuntu@jumpbox'
 alias ssh_db='ssh -NfL 8888:10.20.17.5:3306 ubuntu@jumpbox'
 alias ss_terminal='export ALL_PROXY=socks5://127.0.0.1:1080'
-alias ss='~/Application/Shadowsocks-Qt5-3.0.1-x86_64.AppImage 1 > /dev/null 2>&1 &'
-alias etcher='balena-etcher-electron'
 alias e=$EDITOR
 alias E='SUDO_EDITOR="emacsclient" sudo -e'
-alias ssh='sshrc'
+# alias ssh='sshrc'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -146,4 +145,29 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-PATH=$PATH:/home/shiyanlou/.local/bin
+# terminal font
+source ~/.local/share/icons-in-terminal/icons_bash.sh
+
+# java
+
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_151
+# export JAVA_HOME=/usr/lib/jvm/jdk-13
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=$PATH:${JAVA_HOME}/bin
+
+######################## hisi ####################
+export PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=~/Applications:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/keven/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/keven/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/keven/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/keven/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
